@@ -1,8 +1,8 @@
 {
-  "version": 3,
+  "version": 2,
   "targets": {
-    "UAP,Version=v10.0.10240": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
           "lib/uap10.0/Facebook.Yoga.dll": {}
@@ -86,76 +86,6 @@
           "runtimes/win8-arm/native/yoga.pdb": {
             "assetType": "native",
             "rid": "win8-arm"
-          }
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win10-arm/lib/uap10.0/FBCore.dll": {
-            "assetType": "runtime",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/lib/uap10.0/ImagePipeline.dll": {
-            "assetType": "runtime",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.dll": {
-            "assetType": "runtime",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/ImagePipelineNative.dll": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-arm/native/ImagePipelineNative.pri": {
-            "assetType": "native",
-            "rid": "win10-arm"
-          },
-          "runtimes/win10-x64/lib/uap10.0/FBCore.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/lib/uap10.0/ImagePipeline.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/ImagePipelineNative.dll": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x64/native/ImagePipelineNative.pri": {
-            "assetType": "native",
-            "rid": "win10-x64"
-          },
-          "runtimes/win10-x86/lib/uap10.0/FBCore.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/lib/uap10.0/ImagePipeline.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.dll": {
-            "assetType": "runtime",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/ImagePipelineNative.dll": {
-            "assetType": "native",
-            "rid": "win10-x86"
-          },
-          "runtimes/win10-x86/native/ImagePipelineNative.pri": {
-            "assetType": "native",
-            "rid": "win10-x86"
           }
         }
       },
@@ -403,6 +333,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -507,8 +461,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
@@ -2631,36 +2593,38 @@
           }
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-arm": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-arm": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-arm/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-arm/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -2668,23 +2632,6 @@
         "native": {
           "runtimes/win10-arm/native/yoga.dll": {},
           "runtimes/win10-arm/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-arm/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-arm/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-arm/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -2878,6 +2825,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -2983,8 +2954,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
@@ -5214,36 +5193,38 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-arm-aot": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-arm-aot": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-arm/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-arm/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -5251,23 +5232,6 @@
         "native": {
           "runtimes/win10-arm/native/yoga.dll": {},
           "runtimes/win10-arm/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-arm/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-arm/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-arm/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-arm/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -5462,6 +5426,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -5567,8 +5555,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.aot.System.Collections/4.3.0": {
         "type": "package",
@@ -5970,6 +5966,9 @@
       },
       "runtime.win10-arm-aot.runtime.native.System.IO.Compression/4.0.1": {
         "type": "package",
+        "compile": {
+          "runtimes/win10-arm-aot/lib/netcore50/_._": {}
+        },
         "runtime": {
           "runtimes/win10-arm-aot/lib/netcore50/clrcompression.dll": {}
         }
@@ -7833,36 +7832,38 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-x64": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-x64": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-x64/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-x64/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -7870,23 +7871,6 @@
         "native": {
           "runtimes/win10-x64/native/yoga.dll": {},
           "runtimes/win10-x64/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-x64/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-x64/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-x64/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -8083,6 +8067,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -8188,8 +8196,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
@@ -10425,36 +10441,38 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-x64-aot": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-x64-aot": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-x64/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-x64/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -10462,23 +10480,6 @@
         "native": {
           "runtimes/win10-x64/native/yoga.dll": {},
           "runtimes/win10-x64/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-x64/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-x64/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-x64/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -10676,6 +10677,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -10781,8 +10806,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.aot.System.Collections/4.3.0": {
         "type": "package",
@@ -11184,6 +11217,9 @@
       },
       "runtime.win10-x64-aot.runtime.native.System.IO.Compression/4.0.1": {
         "type": "package",
+        "compile": {
+          "runtimes/win10-x64-aot/lib/netcore50/_._": {}
+        },
         "runtime": {
           "runtimes/win10-x64-aot/lib/netcore50/clrcompression.dll": {}
         }
@@ -13053,36 +13089,38 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-x86": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-x86": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-x86/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-x86/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -13090,23 +13128,6 @@
         "native": {
           "runtimes/win10-x86/native/yoga.dll": {},
           "runtimes/win10-x86/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-x86/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-x86/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-x86/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -13303,6 +13324,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -13408,8 +13453,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.any.System.Collections/4.3.0": {
         "type": "package",
@@ -15645,36 +15698,38 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     },
-    "UAP,Version=v10.0.10240/win10-x86-aot": {
-      "Facebook.Yoga/1.5.0-pre1": {
+    "UAP,Version=v10.0/win10-x86-aot": {
+      "Facebook.Yoga/1.2.0-pre1": {
         "type": "package",
         "compile": {
-          "lib/uap10.0/Facebook.Yoga.dll": {}
+          "runtimes/win10-x86/lib/netstandard1.0/Facebook.Yoga.dll": {}
         },
         "runtime": {
           "runtimes/win10-x86/lib/netstandard1.0/Facebook.Yoga.dll": {}
@@ -15682,23 +15737,6 @@
         "native": {
           "runtimes/win10-x86/native/yoga.dll": {},
           "runtimes/win10-x86/native/yoga.pdb": {}
-        }
-      },
-      "fresco.imagepipeline/0.0.8": {
-        "type": "package",
-        "compile": {
-          "ref/uap10.0/FBCore.dll": {},
-          "ref/uap10.0/ImagePipeline.dll": {},
-          "ref/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "runtime": {
-          "runtimes/win10-x86/lib/uap10.0/FBCore.dll": {},
-          "runtimes/win10-x86/lib/uap10.0/ImagePipeline.dll": {},
-          "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x86/native/ImagePipelineNative.dll": {},
-          "runtimes/win10-x86/native/ImagePipelineNative.pri": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -15896,6 +15934,30 @@
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
       },
+      "Microsoft.Toolkit.Uwp/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.dll": {}
+        }
+      },
+      "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp": "1.3.1"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll": {}
+        }
+      },
       "Microsoft.VisualBasic/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -16001,8 +16063,16 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {
-        "type": "package"
+      "PCLStorage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll": {},
+          "lib/portable-win8+wpa81/PCLStorage.dll": {}
+        }
       },
       "runtime.aot.System.Collections/4.3.0": {
         "type": "package",
@@ -16404,6 +16474,9 @@
       },
       "runtime.win10-x86-aot.runtime.native.System.IO.Compression/4.0.1": {
         "type": "package",
+        "compile": {
+          "runtimes/win10-x86-aot/lib/netcore50/_._": {}
+        },
         "runtime": {
           "runtimes/win10-x86-aot/lib/netcore50/clrcompression.dll": {}
         }
@@ -18273,44 +18346,46 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WinRTXamlToolkit/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WinRTXamlToolkit.dll": {}
+        }
+      },
       "ChakraBridge/1.0.0": {
         "type": "project"
       },
       "ReactNative/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "ChakraBridge": "1.0.0",
-          "Facebook.Yoga": "1.5.0-pre1",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+          "Facebook.Yoga": "1.2.0-pre1",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Toolkit.Uwp.UI": "1.3.1",
           "Newtonsoft.Json": "9.0.1",
-          "OpenCover": "4.6.519",
-          "ReactNativeWebViewBridge": "1.0.0",
+          "PCLStorage": "1.0.2",
           "System.Reactive": "3.1.1",
-          "fresco.imagepipeline": "0.0.8"
-        }
-      },
-      "ReactNativeWebViewBridge/1.0.0": {
-        "type": "project",
-        "framework": "UAP,Version=v10.0.10240",
-        "dependencies": {
-          "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
+          "WinRTXamlToolkit": "2.2.0"
         }
       }
     }
   },
   "libraries": {
-    "Facebook.Yoga/1.5.0-pre1": {
-      "sha512": "vrQlEHwofzmocQT4Dp70xAXoPvqC0a4AGjKlvXLflMyDl75UxNHQ/98be4pHcqXEB+pgUBMjA2iTldZTD7F22A==",
+    "Facebook.Yoga/1.2.0-pre1": {
+      "sha512": "g/kNWvSjsYGtoILl4kKiC0QEPO2cnyovbPXL+jY8lXh8FuCYDvnVO16etrgCnWX5o2M559On4rRP5QebgqIfAQ==",
       "type": "package",
-      "path": "facebook.yoga/1.5.0-pre1",
+      "path": "facebook.yoga/1.2.0-pre1",
       "files": [
+        "Facebook.Yoga.1.2.0-pre1.nupkg.sha512",
+        "Facebook.Yoga.nuspec",
         "build/XamarinMac/Facebook.Yoga.OSX.targets",
         "build/net45/Facebook.Yoga.dll.config",
         "build/net45/Facebook.Yoga.targets",
         "build/uap10.0/Facebook.Yoga.Universal.targets",
-        "facebook.yoga.1.5.0-pre1.nupkg.sha512",
-        "facebook.yoga.nuspec",
         "lib/MonoAndroid/Facebook.Yoga.dll",
         "lib/Xamarin.iOS10/Facebook.Yoga.dll",
         "lib/XamarinMac/Facebook.Yoga.dll",
@@ -18343,51 +18418,6 @@
         "runtimes/win8-arm/lib/netstandard1.0/Facebook.Yoga.pdb",
         "runtimes/win8-arm/native/yoga.dll",
         "runtimes/win8-arm/native/yoga.pdb"
-      ]
-    },
-    "fresco.imagepipeline/0.0.8": {
-      "sha512": "8mtamuhZTljMCSluzB9D7Nr7BYA2y5nj+U9SRdSCWixfDVkmlB+O8twfk33dFMmInCJw7l840OYx1sU1P26Sfg==",
-      "type": "package",
-      "path": "fresco.imagepipeline/0.0.8",
-      "files": [
-        "fresco.imagepipeline.0.0.8.nupkg.sha512",
-        "fresco.imagepipeline.nuspec",
-        "ref/uap10.0/FBCore.dll",
-        "ref/uap10.0/ImagePipeline.dll",
-        "ref/uap10.0/ImagePipelineBase.dll",
-        "runtimes/win10-arm/lib/uap10.0/FBCore.XML",
-        "runtimes/win10-arm/lib/uap10.0/FBCore.dll",
-        "runtimes/win10-arm/lib/uap10.0/FBCore.pri",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipeline.XML",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipeline.dll",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipeline.pri",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.XML",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.dll",
-        "runtimes/win10-arm/lib/uap10.0/ImagePipelineBase.pri",
-        "runtimes/win10-arm/native/ImagePipelineNative.dll",
-        "runtimes/win10-arm/native/ImagePipelineNative.pri",
-        "runtimes/win10-x64/lib/uap10.0/FBCore.XML",
-        "runtimes/win10-x64/lib/uap10.0/FBCore.dll",
-        "runtimes/win10-x64/lib/uap10.0/FBCore.pri",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipeline.XML",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipeline.dll",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipeline.pri",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.XML",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.dll",
-        "runtimes/win10-x64/lib/uap10.0/ImagePipelineBase.pri",
-        "runtimes/win10-x64/native/ImagePipelineNative.dll",
-        "runtimes/win10-x64/native/ImagePipelineNative.pri",
-        "runtimes/win10-x86/lib/uap10.0/FBCore.XML",
-        "runtimes/win10-x86/lib/uap10.0/FBCore.dll",
-        "runtimes/win10-x86/lib/uap10.0/FBCore.pri",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipeline.XML",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipeline.dll",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipeline.pri",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.XML",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.dll",
-        "runtimes/win10-x86/lib/uap10.0/ImagePipelineBase.pri",
-        "runtimes/win10-x86/native/ImagePipelineNative.dll",
-        "runtimes/win10-x86/native/ImagePipelineNative.pri"
       ]
     },
     "Microsoft.CSharp/4.3.0": {
@@ -18613,6 +18643,32 @@
         "runtime.json"
       ]
     },
+    "Microsoft.Toolkit.Uwp/1.3.1": {
+      "sha512": "+E8v/cm1WMsOICOriQ7IloFkN3x+G+LXmC3mlhvYpucmN6X9B7BJI18CgCRvQjTp1t53BDl387p7QIYxT7/bAQ==",
+      "type": "package",
+      "path": "microsoft.toolkit.uwp/1.3.1",
+      "files": [
+        "Microsoft.Toolkit.Uwp.1.3.1.nupkg.sha512",
+        "Microsoft.Toolkit.Uwp.nuspec",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.dll",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.pdb",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.pri",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.xml"
+      ]
+    },
+    "Microsoft.Toolkit.Uwp.UI/1.3.1": {
+      "sha512": "VGbyNQYFBnfyRrSOIkisUPEiThkkijnqnM/jg0kGYIQBpGjeF+lpTr4kWb6fjK0voo+1dUtyX0LWJe5+7brrkg==",
+      "type": "package",
+      "path": "microsoft.toolkit.uwp.ui/1.3.1",
+      "files": [
+        "Microsoft.Toolkit.Uwp.UI.1.3.1.nupkg.sha512",
+        "Microsoft.Toolkit.Uwp.UI.nuspec",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.dll",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.pdb",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.pri",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.UI.xml"
+      ]
+    },
     "Microsoft.VisualBasic/10.0.1": {
       "sha512": "HpNyOf/4Tp2lh4FyywB55VITk0SqVxEjDzsVDDyF1yafDN6Bq18xcHowzCPINyYHUTgGcEtmpYiRsFdSo0KKdQ==",
       "type": "package",
@@ -18704,7 +18760,7 @@
       ]
     },
     "Newtonsoft.Json/10.0.3": {
-      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "sha512": "wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
       "type": "package",
       "path": "newtonsoft.json/10.0.3",
       "files": [
@@ -18730,55 +18786,49 @@
         "tools/install.ps1"
       ]
     },
-    "OpenCover/4.6.519": {
-      "sha512": "oReudTijK4ghbd1GNTzl7Su2KzOufj2evTS5PTGAGC5ThfrThcInB/t9w2ISkcEacOsgLQTdG+PO0UUUGZ+zTw==",
+    "PCLStorage/1.0.2": {
+      "sha512": "9If+1ZFCk3QaT/asfiL+J9FMnx2CTMrLCU8tDMUOI/aCGWGWl9vJ1/KcMkjf92op23ZknenvYJZBLDAqE3sFlg==",
       "type": "package",
-      "path": "opencover/4.6.519",
+      "path": "pclstorage/1.0.2",
       "files": [
-        "License.rtf",
-        "MSBuild/OpenCover.MSBuild.dll",
-        "MSBuild/OpenCover.targets",
-        "SampleSln/.nuget/packages.config",
-        "SampleSln/Bom/Bom.csproj",
-        "SampleSln/Bom/BomManager.cs",
-        "SampleSln/Bom/Properties/AssemblyInfo.cs",
-        "SampleSln/BomSample.sln",
-        "SampleSln/BomTest/BomManagerTests.cs",
-        "SampleSln/BomTest/BomTest.csproj",
-        "SampleSln/BomTest/Properties/AssemblyInfo.cs",
-        "SampleSln/BomTest/packages.config",
-        "SampleSln/coverage.bat",
-        "SampleSln/packages/repositories.config",
-        "Samples/x64/OpenCover.Simple.Target.exe",
-        "Samples/x64/OpenCover.Simple.Target.pdb",
-        "Samples/x86/OpenCover.Simple.Target.exe",
-        "Samples/x86/OpenCover.Simple.Target.pdb",
-        "docs/ReleaseNotes.txt",
-        "docs/Usage.rtf",
-        "opencover.4.6.519.nupkg.sha512",
-        "opencover.nuspec",
-        "readme.txt",
-        "tools/Autofac.Configuration.dll",
-        "tools/Autofac.dll",
-        "tools/CrashReporter.NET.dll",
-        "tools/Gendarme.Framework.dll",
-        "tools/Gendarme.Rules.Maintainability.dll",
-        "tools/Mono.Cecil.Mdb.dll",
-        "tools/Mono.Cecil.Pdb.dll",
-        "tools/Mono.Cecil.dll",
-        "tools/OpenCover.Console.exe",
-        "tools/OpenCover.Console.exe.config",
-        "tools/OpenCover.Console.pdb",
-        "tools/OpenCover.Extensions.dll",
-        "tools/OpenCover.Extensions.pdb",
-        "tools/OpenCover.Framework.dll",
-        "tools/OpenCover.Framework.pdb",
-        "tools/log4net.config",
-        "tools/log4net.dll",
-        "tools/x64/OpenCover.Profiler.dll",
-        "tools/x86/OpenCover.Profiler.dll",
-        "transform/simple_report.xslt",
-        "transform/transform.ps1"
+        "PCLStorage.1.0.2.nupkg.sha512",
+        "PCLStorage.nuspec",
+        "lib/monoandroid/PCLStorage.Abstractions.dll",
+        "lib/monoandroid/PCLStorage.Abstractions.xml",
+        "lib/monoandroid/PCLStorage.dll",
+        "lib/monoandroid/PCLStorage.xml",
+        "lib/monotouch/PCLStorage.Abstractions.dll",
+        "lib/monotouch/PCLStorage.Abstractions.xml",
+        "lib/monotouch/PCLStorage.dll",
+        "lib/monotouch/PCLStorage.xml",
+        "lib/net45/PCLStorage.Abstractions.dll",
+        "lib/net45/PCLStorage.Abstractions.xml",
+        "lib/net45/PCLStorage.dll",
+        "lib/net45/PCLStorage.xml",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.dll",
+        "lib/portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac/PCLStorage.xml",
+        "lib/portable-win8+wpa81/PCLStorage.Abstractions.dll",
+        "lib/portable-win8+wpa81/PCLStorage.Abstractions.xml",
+        "lib/portable-win8+wpa81/PCLStorage.dll",
+        "lib/portable-win8+wpa81/PCLStorage.xml",
+        "lib/sl5/PCLStorage.Abstractions.dll",
+        "lib/sl5/PCLStorage.Abstractions.xml",
+        "lib/sl5/PCLStorage.dll",
+        "lib/sl5/PCLStorage.xml",
+        "lib/wp8/PCLStorage.Abstractions.dll",
+        "lib/wp8/PCLStorage.Abstractions.xml",
+        "lib/wp8/PCLStorage.dll",
+        "lib/wp8/PCLStorage.xml"
       ]
     },
     "runtime.any.System.Collections/4.3.0": {
@@ -25161,20 +25211,270 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
+    "WinRTXamlToolkit/2.2.0": {
+      "sha512": "OXi0ajNcPplMNG+YRqz9qDU2LQx1PaYzPBUD40/AIGH6O08ndZSfbpSisMMCLLYFVbXT3YFDcD8wH5Y+jeX3vg==",
+      "type": "package",
+      "path": "winrtxamltoolkit/2.2.0",
+      "files": [
+        "WinRTXamlToolkit.2.2.0.nupkg.sha512",
+        "WinRTXamlToolkit.nuspec",
+        "lib/uap10.0/WinRTXamlToolkit.dll",
+        "lib/uap10.0/WinRTXamlToolkit.pri",
+        "lib/uap10.0/WinRTXamlToolkit/Async/_._",
+        "lib/uap10.0/WinRTXamlToolkit/AwaitableUI/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Common/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AlternativeFrame/AlternativeFrame.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AlternativeFrame/AlternativeFrame.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AnimatingContainer/AnimatingContainer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AnimatingContainer/AnimatingContainer.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AutoCompleteTextBox/Algorithm/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AutoCompleteTextBox/AutoCompleteTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AutoCompleteTextBox/AutoCompleteTextBox.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/AutoOrientingStackPanel/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/Behaviors/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CameraCaptureControl/CameraCaptureControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CameraCaptureControl/CameraCaptureControl.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CascadingImageControl/CascadingImageControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CascadingImageControl/CascadingImageControl.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CascadingTextBlock/CascadingTextBlock.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CascadingTextBlock/CascadingTextBlock.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ColorPicker/ColorPicker.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ColorPicker/ColorPicker.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/Common/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CountdownControl/CountdownControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CountdownControl/CountdownControl.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CustomAppBar/CustomAppBar.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CustomAppBar/CustomAppBar.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CustomGridSplitter/CustomGridSplitter.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/CustomGridSplitter/CustomGridSplitter.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/Data/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/DelayedLoadControl/DelayedLoadControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/DelayedLoadControl/DelayedLoadControl.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/DockPanel/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/Extensions/Forms/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/FocusVisualizer/FocusVisualizer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/FocusVisualizer/FocusVisualizer.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/FxContentControl/FxContentControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/FxContentControl/FxContentControl.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/HeaderedItemsControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ImageButton/ImageButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ImageButton/ImageButton.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ImageToggleButton/ImageToggleButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ImageToggleButton/ImageToggleButton.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/InputDialog/InputDialog.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/InputDialog/InputDialog.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/LayoutTransformControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ListItemButton/ListItemButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ListItemButton/ListItemButton.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/NumericUpDown/NumericUpDown.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/NumericUpDown/NumericUpDown.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/PieSlice/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/RingSlice/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/SquareGrid/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ToolStrip/ToolStrip.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ToolStrip/ToolStrip.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ToolWindow/ToolWindow.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/ToolWindow/ToolWindow.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeView.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeView.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewItem.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewItem.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewMouse.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewMouse.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewTouch.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/TreeView/TreeViewTouch.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/UniformGrid/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WatermarkPasswordBox/WatermarkPasswordBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WatermarkPasswordBox/WatermarkPasswordBox.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WatermarkTextBox/WatermarkTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WatermarkTextBox/WatermarkTextBox.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WebBrowser/WebBrowser.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WebBrowser/WebBrowser.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Controls/WrapPanel/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Converters/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Device/_._",
+        "lib/uap10.0/WinRTXamlToolkit/IO/Extensions/_._",
+        "lib/uap10.0/WinRTXamlToolkit/IO/Serialization/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Imaging/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Input/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Interactivity/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Licensing/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Net/_._",
+        "lib/uap10.0/WinRTXamlToolkit/Properties/WinRTXamlToolkit.rd.xml",
+        "lib/uap10.0/WinRTXamlToolkit/Themes/Generic.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/Themes/Generic.xbf",
+        "lib/uap10.0/WinRTXamlToolkit/Tools/_._",
+        "lib/uap10.0/WinRTXamlToolkit/WinRTXamlToolkit.xr.xml",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/AlternativeFrame/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/AnimatingContainer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/AutoCompleteTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CameraCaptureControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CascadingImageControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CascadingTextBlock/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ColorPicker/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CountdownControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CustomAppBar/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/CustomGridSplitter/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/DelayedLoadControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/FocusVisualizer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/FxContentControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ImageButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ImageToggleButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/InputDialog/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ListItemButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/NumericUpDown/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ToolStrip/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/ToolWindow/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/TreeView/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/WatermarkPasswordBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/WatermarkTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Controls/WebBrowser/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/Release/Themes/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/AlternativeFrame/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/AnimatingContainer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/AutoCompleteTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CameraCaptureControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CascadingImageControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CascadingTextBlock/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ColorPicker/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CountdownControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CustomAppBar/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/CustomGridSplitter/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/DelayedLoadControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/FocusVisualizer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/FxContentControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ImageButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ImageToggleButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/InputDialog/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ListItemButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/NumericUpDown/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ToolStrip/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/ToolWindow/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/TreeView/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/WatermarkPasswordBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/WatermarkTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Controls/WebBrowser/_._",
+        "lib/uap10.0/WinRTXamlToolkit/bin/x86/Debug/Themes/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/AlternativeFrame/AlternativeFrame.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/AnimatingContainer/AnimatingContainer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/AutoCompleteTextBox/AutoCompleteTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CameraCaptureControl/CameraCaptureControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CascadingImageControl/CascadingImageControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CascadingTextBlock/CascadingTextBlock.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ColorPicker/ColorPicker.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CountdownControl/CountdownControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CustomAppBar/CustomAppBar.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/CustomGridSplitter/CustomGridSplitter.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/DelayedLoadControl/DelayedLoadControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/FocusVisualizer/FocusVisualizer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/FxContentControl/FxContentControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ImageButton/ImageButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ImageToggleButton/ImageToggleButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/InputDialog/InputDialog.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ListItemButton/ListItemButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/NumericUpDown/NumericUpDown.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ToolStrip/ToolStrip.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/ToolWindow/ToolWindow.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/TreeView/TreeView.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/TreeView/TreeViewItem.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/TreeView/TreeViewMouse.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/TreeView/TreeViewTouch.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/WatermarkPasswordBox/WatermarkPasswordBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/WatermarkTextBox/WatermarkTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Controls/WebBrowser/WebBrowser.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/Themes/Generic.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/AlternativeFrame/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/AnimatingContainer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/AutoCompleteTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CameraCaptureControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CascadingImageControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CascadingTextBlock/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ColorPicker/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CountdownControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CustomAppBar/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/CustomGridSplitter/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/DelayedLoadControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/FocusVisualizer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/FxContentControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ImageButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ImageToggleButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/InputDialog/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ListItemButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/NumericUpDown/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ToolStrip/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/ToolWindow/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/TreeView/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/WatermarkPasswordBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/WatermarkTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Controls/WebBrowser/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/WinRTXamlToolkit/Themes/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/Release/intermediatexaml/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/AlternativeFrame/AlternativeFrame.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/AnimatingContainer/AnimatingContainer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/AutoCompleteTextBox/AutoCompleteTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CameraCaptureControl/CameraCaptureControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CascadingImageControl/CascadingImageControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CascadingTextBlock/CascadingTextBlock.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ColorPicker/ColorPicker.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CountdownControl/CountdownControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CustomAppBar/CustomAppBar.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/CustomGridSplitter/CustomGridSplitter.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/DelayedLoadControl/DelayedLoadControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/FocusVisualizer/FocusVisualizer.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/FxContentControl/FxContentControl.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ImageButton/ImageButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ImageToggleButton/ImageToggleButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/InputDialog/InputDialog.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ListItemButton/ListItemButton.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/NumericUpDown/NumericUpDown.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ToolStrip/ToolStrip.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/ToolWindow/ToolWindow.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/TreeView/TreeView.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/TreeView/TreeViewItem.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/TreeView/TreeViewMouse.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/TreeView/TreeViewTouch.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/WatermarkPasswordBox/WatermarkPasswordBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/WatermarkTextBox/WatermarkTextBox.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Controls/WebBrowser/WebBrowser.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/TempPE/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/Themes/Generic.xaml",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/AlternativeFrame/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/AnimatingContainer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/AutoCompleteTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CameraCaptureControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CascadingImageControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CascadingTextBlock/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ColorPicker/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CountdownControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CustomAppBar/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/CustomGridSplitter/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/DelayedLoadControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/FocusVisualizer/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/FxContentControl/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ImageButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ImageToggleButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/InputDialog/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ListItemButton/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/NumericUpDown/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ToolStrip/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/ToolWindow/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/TreeView/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/WatermarkPasswordBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/WatermarkTextBox/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Controls/WebBrowser/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/WinRTXamlToolkit/Themes/_._",
+        "lib/uap10.0/WinRTXamlToolkit/obj/x86/Debug/intermediatexaml/_._"
+      ]
+    },
     "ChakraBridge/1.0.0": {
       "type": "project",
-      "path": "../../../../react-native-windows/ReactWindows/ChakraBridge/ChakraBridge.vcxproj",
-      "msbuildProject": "../../../../react-native-windows/ReactWindows/ChakraBridge/ChakraBridge.vcxproj"
+      "path": "../../../../post-native-3/node_modules/react-native-windows/ReactWindows/ChakraBridge/ChakraBridge.vcxproj",
+      "msbuildProject": "../../../../post-native-3/node_modules/react-native-windows/ReactWindows/ChakraBridge/ChakraBridge.vcxproj"
     },
     "ReactNative/1.0.0": {
       "type": "project",
-      "path": "../../../../react-native-windows/ReactWindows/ReactNative/project.json",
-      "msbuildProject": "../../../../react-native-windows/ReactWindows/ReactNative/ReactNative.csproj"
-    },
-    "ReactNativeWebViewBridge/1.0.0": {
-      "type": "project",
-      "path": "../../../../react-native-windows/ReactWindows/ReactNativeWebViewBridge/project.json",
-      "msbuildProject": "../../../../react-native-windows/ReactWindows/ReactNativeWebViewBridge/ReactNativeWebViewBridge.csproj"
+      "path": "../../../../post-native-3/node_modules/react-native-windows/ReactWindows/ReactNative/project.json",
+      "msbuildProject": "../../../../post-native-3/node_modules/react-native-windows/ReactWindows/ReactNative/ReactNative.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -25182,49 +25482,34 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Newtonsoft.Json >= 10.0.3"
     ],
-    "UAP,Version=v10.0.10240": []
+    "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\VladislavK\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\MobileClientLE\\node_modules\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\RNSensitiveInfo.csproj",
+      "projectUniqueName": "D:\\project\\projects\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\RNSensitiveInfo.csproj",
       "projectName": "RNSensitiveInfo",
-      "projectPath": "D:\\MobileClientLE\\node_modules\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\RNSensitiveInfo.csproj",
-      "projectJsonPath": "D:\\MobileClientLE\\node_modules\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\project.json",
-      "packagesPath": "C:\\Users\\VladislavK\\.nuget\\packages\\",
-      "outputPath": "D:\\MobileClientLE\\node_modules\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\obj\\",
+      "projectPath": "D:\\project\\projects\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\RNSensitiveInfo.csproj",
+      "projectJsonPath": "D:\\project\\projects\\react-native-sensitive-info\\windows\\RNSensitiveInfo\\RNSensitiveInfo\\project.json",
       "projectStyle": "ProjectJson",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\VladislavK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
-      ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
-        "uap10.0.10240": {
+        "uap10.0": {
           "projectReferences": {
-            "D:\\MobileClientLE\\node_modules\\react-native-windows\\ReactWindows\\ReactNative\\ReactNative.csproj": {
-              "projectPath": "D:\\MobileClientLE\\node_modules\\react-native-windows\\ReactWindows\\ReactNative\\ReactNative.csproj"
+            "D:\\project\\projects\\post-native-3\\node_modules\\react-native-windows\\ReactWindows\\ReactNative\\ReactNative.csproj": {
+              "projectPath": "D:\\project\\projects\\post-native-3\\node_modules\\react-native-windows\\ReactWindows\\ReactNative\\ReactNative.csproj"
             }
           }
         }
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.2.2, )",
-      "Newtonsoft.Json": "[10.0.3, )"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+      "Newtonsoft.Json": "10.0.3"
     },
     "frameworks": {
-      "uap10.0.10240": {}
+      "uap10.0": {}
     },
     "runtimes": {
       "win10-arm": {
@@ -25246,23 +25531,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Microsoft.NETCore.UniversalWindowsPlatform from 6.0.1 to 5.2.2. Reference the package directly from the project to select a different version. \r\n RNSensitiveInfo -> ReactNative -> Microsoft.NETCore.UniversalWindowsPlatform (>= 6.0.1) \r\n RNSensitiveInfo -> Microsoft.NETCore.UniversalWindowsPlatform (>= 5.2.2)",
-      "libraryId": "Microsoft.NETCore.UniversalWindowsPlatform",
-      "targetGraphs": [
-        "UAP,Version=v10.0.10240",
-        "UAP,Version=v10.0.10240/win10-arm",
-        "UAP,Version=v10.0.10240/win10-arm-aot",
-        "UAP,Version=v10.0.10240/win10-x64",
-        "UAP,Version=v10.0.10240/win10-x64-aot",
-        "UAP,Version=v10.0.10240/win10-x86",
-        "UAP,Version=v10.0.10240/win10-x86-aot"
-      ]
   }
-  ]
 }

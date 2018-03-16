@@ -24,7 +24,7 @@ namespace RNSensitiveInfo
         }
 
         [ReactMethod]
-        public void getItem(string key, JObject options, IPromise promise)
+        public async void getItem(string key, JObject options, IPromise promise)
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -48,12 +48,12 @@ namespace RNSensitiveInfo
             }
             catch (Exception ex)
             {
-                promise.Reject(ex);
+                promise.Reject("ERROR GET : " + ex.Message);
             }
         }
 
         [ReactMethod]
-        public void setItem(string key, string value, JObject options, IPromise promise)
+        public async void setItem(string key, string value, JObject options, IPromise promise)
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -70,12 +70,12 @@ namespace RNSensitiveInfo
             }
             catch (Exception ex)
             {
-                promise.Reject(ex);
+                promise.Reject("ERROR SET : " + ex.Message);
             }
         }
 
         [ReactMethod]
-        public void deleteItem(string key, JObject options, IPromise promise)
+        public async void deleteItem(string key, JObject options, IPromise promise)
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -94,12 +94,12 @@ namespace RNSensitiveInfo
             }
             catch (Exception ex)
             {
-                promise.Reject(ex);
+                promise.Reject("ERROR DELETE : " + ex.Message);
             }
         }
 
         [ReactMethod]
-        public void getAllItems(JObject options, IPromise promise)
+        public async void getAllItems(JObject options, IPromise promise)
         {
             try
             {
@@ -121,12 +121,14 @@ namespace RNSensitiveInfo
             }
             catch (Exception ex)
             {
-                promise.Reject(ex);
+                promise.Reject("ERROR GET ALL : " + ex.Message);
             }
         }
 
         private PasswordCredential prefs(string name, string key)
         {
+            PasswordCredential credential = null;
+
             var vault = new PasswordVault();
             return vault.Retrieve(name, key);
         }
